@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Dashboard</title>
+    <meta name="description" content="A responsive dashboard with charts, drag-and-drop, and offline functionality">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icons/icon-72x72.png">
+</head>
+<body>
+    <div id="app">
+        <header id="dashboard-header">
+            <h1>Analytics Dashboard</h1>
+            <div class="controls">
+                <button id="theme-toggle">🌙</button>
+                <button id="add-widget">+ Add Widget</button>
+            </div>
+        </header>
+
+        <main class="dashboard-container">
+            <section class="widgets-grid" id="widgets-container">
+                <!-- Widgets will be added here dynamically -->
+            </section>
+        </main>
+
+        <div id="loading" class="loading">Loading dashboard...</div>
+    </div>
+
+    <!-- Templates -->
+    <template id="widget-template">
+        <div class="widget" draggable="true">
+            <div class="widget-header">
+                <h3 class="widget-title">Widget Title</h3>
+                <button class="widget-close">×</button>
+            </div>
+            <div class="widget-content">
+                <!-- Content will be added dynamically -->
+            </div>
+        </div>
+    </template>
+
+    <!-- External Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Our JavaScript Modules -->
+    <script type="module" src="js/dataManager.js"></script>
+    <script type="module" src="js/chartManager.js"></script>
+    <script type="module" src="js/dragDrop.js"></script>
+    <script type="module" src="js/components/header.js"></script>
+    <script type="module" src="js/components/card.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script src="js/serviceWorker.js"></script>
+</body>
+</html>
